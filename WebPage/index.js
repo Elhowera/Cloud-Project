@@ -8,6 +8,7 @@ const app = express();
 const path = require("path");
 const fs = require("fs");
 
+require("./CloudDatabase")(app);
 //use a public directory without interpretations for the html files
 //searches the public directory for the specified file
 app.use(express.static(path.join("public")));
