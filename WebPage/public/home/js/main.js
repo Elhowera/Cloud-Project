@@ -15,5 +15,6 @@ fetch(`/db/members/${memberId}`, {
     username.innerText = body.user.Name;
     id.innerText = `ID: ${body.user.ID}`;
     description.innerText = `I am ${body.user.Age} Years old, I have a CGPA of ${body.user.CGPA}.\n${body.user.Description}`;
-    image.src = `/assets/6626b92680e967f279da33af/${body.user.Image}`
+    image.srcset = `/assets/6626b92680e967f279da33af/${body.user.Image}`
 })
+
