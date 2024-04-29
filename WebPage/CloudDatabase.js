@@ -6,18 +6,21 @@ module.exports = (app) => {
     // Create a connection pool
     const pool = mysql.createPool({
         connectionLimit: 10,
-        host: 'localhost',
+        host: '192.168.1.24',
         user: 'root',
         password: '',
         database: 'cloudproject'
     });
-
     app.get("/db/members/:id", (req, res) => {
         const memberId = req.params.id;
         if(!memberId) return res.status(400).send({msg: "Member id required"})
         if(!fs.existsSync(path.join(__dirname, "public", "home", "members", memberId))) return res.status(400).send({msg: "nice try lilbro"});
 
         pool.getConnection((err, connection) => {
+            if (err) {
+                console.error('Error getting connection:', err);
+                return;
+            }
             connection.query(`select * from students where PageID="${memberId}"`, (err, result) => {
                 connection.release();
 

@@ -1,0 +1,31 @@
+version: '3.8d'
+
+services:
+  myxampp:
+    image: xampp-mysql:latest
+    ports:
+      - "80:80"
+      - "443:443"
+      - "3306:3306"
+    volumes:
+      - /E/XAMPP/mysql/data:/opt/lampp/var/mysql
+      - ./httpd-xampp.conf:/opt/lampp/etc/extra/httpd-xampp.conf
+      - ./WebPage:/mnt/data
+    networks:
+      - mynetwork
+
+  webpageapp:
+    image: webpageapp:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - myxampp
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+
+#docker-compose up -d   
