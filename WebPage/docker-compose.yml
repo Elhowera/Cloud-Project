@@ -1,8 +1,8 @@
-version: '3.8d'
+version: '3.8'
 
 services:
   myxampp:
-    image: xampp-mysql:latest
+    image: myxampp:latest
     ports:
       - "80:80"
       - "443:443"

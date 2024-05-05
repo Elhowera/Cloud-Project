@@ -6,9 +6,9 @@ module.exports = (app) => {
     // Create a connection pool
     const pool = mysql.createPool({
         connectionLimit: 10,
-        host: '192.168.1.24',
+        host: 'webpage-myxampp-1',
         user: 'root',
-        password: '',
+        password: '4524',
         database: 'cloudproject'
     });
     app.get("/db/members/:id", (req, res) => {
