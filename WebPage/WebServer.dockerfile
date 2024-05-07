@@ -13,11 +13,6 @@ EXPOSE 5000
 CMD ["node", "index.js"]
 
 
-
-
-
-
-
 # docker build -t webpageapp -f WebServer.dockerfile .
 # docker run -p 5000:5000 webpageapp
 #docker exec -it webpage-webpageapp-1 bash

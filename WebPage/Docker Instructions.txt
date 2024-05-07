@@ -1,3 +1,6 @@
+#Before anything go to the webpage folder
+    cd WebPage
+
 #First We build the WebPage Container
     docker build -t webpageapp -f WebServer.dockerfile .
 

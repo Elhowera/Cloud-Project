@@ -10,6 +10,7 @@ services:
     volumes:
       - /E/XAMPP/mysql/data:/opt/lampp/var/mysql
       - ./httpd-xampp.conf:/opt/lampp/etc/extra/httpd-xampp.conf
+      #- ./config.inc.php:/opt/lampp/phpmyadmin/config.inc.php
       - ./WebPage:/mnt/data
     networks:
       - mynetwork
